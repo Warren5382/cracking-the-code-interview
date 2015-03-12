@@ -3,4 +3,20 @@ design an algorithm and write code to remove the duplicate characters in a strin
 
 SOLUTION:
 
-int removeduplicate(char *str)
+int removeduplicate(char *str) {
+	int len = str.length();
+	if (len < 2) return 0;
+	int tail = 1;
+	
+	for (int i = 0; i < len; ++i) {
+		int j = 0;
+		for (; j < tail; ++j) {
+			if (str[i] == str[j]) break;
+		}
+		if (j == tail) {
+			str[tail] = str[i];
+			tail++;
+		}
+	}
+	str[tail] = 0;
+}
