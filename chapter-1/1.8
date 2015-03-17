@@ -1,0 +1,11 @@
+QUESTION:
+judege rotation
+
+SOLUTION:
+bool isRotate(char* str1, char* str2) {
+	if (str1.len() == str2.len() && str1.len > 0) {
+		char * str1str1 = str1 + str1;
+		return isSubstring(str1str1, str2);
+	}
+	return false;
+}
